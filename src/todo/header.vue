@@ -5,6 +5,7 @@
       <li class="l-header__ul_buy">buy</li>
       <li>drink</li>
       <li>common</li>
+      <li>active</li>
     </ul>
   </div>
 </template>

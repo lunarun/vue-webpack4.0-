@@ -5,6 +5,7 @@ const VueLoaderPlugin = require('vue-loader/lib/plugin');
 const postcssConfig = require('./postcss.config');
 const isDev = process.env.NODE_ENV === 'development';
 const MiniCssExtractPlugin = require('mini-css-extract-plugin'); // 用来把css等非js文件单独拎出来打包
+const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 const config = {
   target: 'web',
@@ -144,7 +145,8 @@ if (isDev) {
     new MiniCssExtractPlugin({
       filename: 'styles.[contenthash:8].css',
       chunkFilename: '[id].css'
-    })
+    }),
+    new CleanWebpackPlugin(['dist'])
   )
   config.optimization = {
     runtimeChunk: {
